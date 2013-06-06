@@ -1,0 +1,22 @@
+Import section
+    >>> import Image as IM
+    >>> import webbrowser, imageReader
+
+Test
+
+    # open image
+    >>> image = IM.open("empire.jpg")
+    >>> imageReader.printImageInfo(image)
+    JPEG (569, 800) RGB
+
+    # convert image to grey level
+    >>> greyImage = image.convert("L")
+    >>> imageReader.printImageInfo(greyImage)
+    None (569, 800) L
+
+    # save image
+    >>> greyImage.save("empire_grey.jpg")
+
+    # open image
+    >>> webbrowser.open("empire_grey.jpg")
+    True
